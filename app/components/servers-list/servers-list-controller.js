@@ -1,4 +1,4 @@
-serversRouteModule.controller('serversListController', function($scope, $q, $filter, Servers, $routeParams) {
+serversRouteModule.controller('serversListController', function($scope, $filter, Servers, $routeParams) {
 
 	function refreshData() {
 		$scope.servers = Servers.getServers();
@@ -29,15 +29,15 @@ serversRouteModule.controller('serversListController', function($scope, $q, $fil
 	};
 
 	$scope.restart = function(param) {
-		$scope.waiting = 'Please, wait for servers restart';
+		$scope.waitingText = 'Please, wait for servers restart';
 		var promise = Servers.restart(param);
 		promise
 			.then(function(greeting) {
-				$scope.waiting = greeting;
+				$scope.waitingText = greeting;
 			}, function(reason) {
-				$scope.waiting = reason;
+				$scope.waitingText = reason;
 			}, function(update) {
-				$scope.waiting = update;
+				$scope.waitingText = update;
 			});
 	};
 

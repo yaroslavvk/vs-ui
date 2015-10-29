@@ -30,7 +30,7 @@
             <td>
                 <div class="col-xs-5">
                     <a ng-href="#/edit/{{server.id}}"><button type="button" class="btn btn-default">Edit</button></a>
-                    <a ng-href="{{$location.url()}}"><button ng-click="remove(server.id)" type="button" class="btn btn-default">Remove</button></a>
+                    <a><button ng-click="remove(server.id)" type="button" class="btn btn-default">Remove</button></a>
                     <button type="button" ng-click="restart()" class="btn btn-default" data-toggle="modal" data-target="#myModal">Restart</button>
                 </div>
                 <div class="col-xs-7">
@@ -39,7 +39,7 @@
                         </select>
                     </fieldset>
                     <div class="col-xs-8">
-                        <a ng-href="{{$location.url()}}"><button type="button" ng-click="update(server.id, version)" class="btn btn-default">Update</button></a>
+                        <a><button type="button" ng-click="update(server.id, version)" class="btn btn-default">Update</button></a>
                     </div>
                 </div>
             </td>
@@ -55,7 +55,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
-                <p>{{waiting}}</p>
+                <p>{{waitingText}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

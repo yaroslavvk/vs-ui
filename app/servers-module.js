@@ -22,7 +22,7 @@ function getTemplate($routeProvider) {
 serversRouteModule.config(getTemplate);
 
 var serversListModule = angular.module('serversListModule', []);
-serversListModule.factory('Servers', function($q) {
+serversListModule.factory('Servers', function($q, $timeout) {
     var servers = {},
         availableVerTmp,
         serversLocalStorage,
@@ -143,6 +143,9 @@ serversListModule.factory('Servers', function($q) {
         localStorage.serversTmp = JSON.stringify(localServers);
     };
 
+
+    // for checking data from server;
+
     // function okToGreet(param) {
     //     // return param == '';
     // }
@@ -150,7 +153,7 @@ serversListModule.factory('Servers', function($q) {
     servers.restart = function(param) {
         var deferred = $q.defer();
 
-        setTimeout(function() {
+        $timeout(function() {
             // if (okToGreet(param)) {
                 deferred.resolve('servers has restarted');
             // } else {
