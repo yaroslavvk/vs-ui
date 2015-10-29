@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Servers</h1>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Ip</th>
+                <th>Name</th>
+                <th>Current Version</th>
+                <th>Operations</th>
+            </tr>
+            <tr>
+                <td><input ng-model="server.ip" type="text"></td>
+                <td><input ng-model="server.name" type="text"></td>
+                <td><input ng-model="server.version" type="text"></td>
+                <td>
+                    <a ng-href="#/"><button ng-click="save(server)" type="button" class="btn btn-default">Save</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
