@@ -1,4 +1,4 @@
-# Video Servers UI
+# Servers UI
 # Task:
 "Server" object has properties: IP, name, current version
 Create List View for all available servers
